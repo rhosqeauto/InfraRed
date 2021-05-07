@@ -63,7 +63,7 @@ For more topology file examples, please check out the default `available nodes <
 To override default values in the topology dict the extra vars can be provided through the CLI. For example,
 to add more memory to the controller node, the ``override.controller.memory`` value should be set::
 
-    infrared virsh --topology-nodes controller:1,compute:1 -e override.controller.memeory=30720
+    infrared virsh --topology-nodes controller:1,compute:1 -e override.controller.memory=30720
 
 Network topology
 ----------------
