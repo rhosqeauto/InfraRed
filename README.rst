@@ -9,14 +9,14 @@ CLI experience that can be used by anyone, without prior Ansible knowledge.
 The project originated from Red Hat OpenStack infrastructure team that looked for a solution to provide an "easier" method
 for installing OpenStack from CLI but has since grown and can be used for *any* Ansible based projects.
 
-Want to take it for a spin? check out our docs at the bottom under the `Official Documentation`_.
+Want to take it for a spin? check out our `official documentation <http://infrared.readthedocs.org>`.
+
 
 How to contribute?
 ------------------
-
 To contribute please follow: http://infrared.readthedocs.io/en/latest/contribute.html
+
 
 Official Documentation
 ----------------------
-
 For more information Please read our `Documentation <http://infrared.readthedocs.org>`_
