@@ -18,7 +18,7 @@ Prerequisites
 
 General requirements::
 
-  sudo yum install git gcc libffi-devel openssl-devel
+  sudo yum install git gcc libffi-devel openssl-devel python-pip
 
 .. note:: Dependencies explained:
 
@@ -29,6 +29,8 @@ General requirements::
    * libffi-devel - required by `cffi <http://cffi.readthedocs.io/en/latest/>`_
 
    * openssl-devel - required by `cryptography <http://cryptography.readthedocs.io/en/latest/>`_
+   
+   * python-pip - used for easily installing python packages
 
 Closed Virtualenv_ is required to create clean python environment separated from system::
 
