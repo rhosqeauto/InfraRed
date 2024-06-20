@@ -1,7 +1,7 @@
 # https://jamielinux.com/docs/libvirt-networking-handbook/bridged-network.html#bridged-network
 - name: validate required nic is present
   fail:
-      msg: "Cannot find bridge nic: {{ nic_name }}"
+      msg: "Cannot find bridge nic: Empty nic_data for {{ nic_settings }}. Have you configured override.networks with this NIC name, but the NIC does not exist on the server?"
   when: nic_data == ''
 
 - name: disable netfilter for bridges
