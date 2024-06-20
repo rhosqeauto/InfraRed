@@ -102,6 +102,12 @@
 #  debug:
 #      msg: "Build mark: nodes_failing_introspection={{ failed_nodes_uuids }}"
 
+# NOTE(TheJulia): This is... a time sink for troubleshooting and ultimately something which
+# should not be encoded as needing to try and recover from an underlying software failure
+# without failing the job. Except that resulting trashing situation, generates unrelated
+# errors and this method uses an older style of invoking inspection which does not
+# align with the overall state machine of ironic. Realistically, we should fail fast
+# and enable troubleshooting.
 - name: introspect and retry sequentially node by node the khaleesi way
   shell: >
       source ~/stackrc;
@@ -118,7 +124,16 @@
   delay: 5
   until: introspect_status.stdout.find("None") != -1
   with_items: "{{ failed_nodes_uuids | default([]) }}"
-  when: failed_nodes_uuids is defined
+  when:
+    - failed_nodes_uuids is defined
+    - install.version|default(undercloud_version)|openstack_release < 16
+
+- name: fail fast if inspection failed
+  fail:
+    msg: Introspection failed for {{ failed_nodes_uuids }}. Human investigation advised as boot settings are likely incorrect.
+  when:
+    - failed_nodes_uuids is defined
+    - install.version|default(undercloud_version)|openstack_release >= 16
 
 - name: store uuid's of all nodes in ironic db
   shell: |
@@ -134,6 +149,9 @@
 
 # If bulk introspection was not completed, nodes are not set to available which
 # makes them invisible to overcloud deploy stage.
+# NOTE(TheJulia): This is an anti-pattern encoding a workaround which should not be needed.
+# i.e. we should have already failed hard IF we had to manually re-trigger introspection
+# or need to be doing some sort of cleanup. Consider removing this at some point.
 - name: set provision state of all nodes to available if bulk introspection failed to do so
   shell: |
       source ~/stackrc;
