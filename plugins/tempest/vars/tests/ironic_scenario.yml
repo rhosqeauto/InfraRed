@@ -5,6 +5,7 @@ test_dict:
 
     whitelist:
         - "^ironic_tempest_plugin.tests.scenario.test_baremetal_basic_ops.BaremetalBasicOpsAndRescue.test_baremetal_server_ops_wholedisk_image"
+        - "^ironic_tempest_plugin.tests.scenario.ironic_standalone.test_ramdisk_iso.baremetalRamdiskBootIsoIPXE.test_ramdisk_boot"
     blacklist:
         - "^ironic_tempest_plugin.tests.scenario.test_baremetal_basic_ops.BaremetalBasicOps.test_baremetal_server_ops_wholedisk_image"
         - "^ironic_tempest_plugin.tests.scenario.test_baremetal_boot_from_volume.BaremetalBFV.test_baremetal_boot_from_volume"

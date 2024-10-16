@@ -1,0 +1,22 @@
+---
+test_dict:
+    test_regex:
+      default: ironic_tempest_plugin.tests.scenario.ironic_standalone.test_ramdisk_iso
+
+    whitelist: []
+    blacklist: []
+        - "^ironic_tempest_plugin.tests.scenario.ironic_standalone.test_ramdisk_iso.BaremetalRamdiskBootIsoVMedia.test_ramdisk_boot"
+    plugins:
+      ironic_tests:
+        repo: "https://opendev.org/openstack/ironic-tempest-plugin.git"
+        package:
+            9: "python-ironic-tests"
+            10: "python-ironic-tests"
+            11: "python-ironic-tests"
+            12: "python-ironic-tests"
+            13: "python2-ironic-tests-tempest"
+            14: "python2-ironic-tests-tempest"
+            default: "python3-ironic-tests-tempest"
+        dependencies:
+          - postgresql-devel
+          - libjpeg-devel
