@@ -33,7 +33,7 @@ Infrared allows to perform baremetal deployments.
 
    For baremetal deployments, in order to reflect the real networking,
    templates should be prepared by the user before the deployment, including ``instackenv.json`` file.
-   All addition parameters like storage (``ceph`` or ``swift``) disks or any other parameters should be added to the templates as well.
+   All additional parameters like storage (``ceph`` or ``swift``) disks or any other parameters should be added to the templates as well.
 
    .. code:: shell
 

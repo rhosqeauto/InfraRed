@@ -23,7 +23,7 @@ External Network
 To create external network we need to specify in ``--tasks`` the task ``create_external_network`` and then use the flags above:
 
 * ``--deployment-files``:
-    Name of folder in cloud's user on undercloud, which containing the templates of the overcloud deployment.
+    Name of folder in cloud's user on undercloud, which contains the templates of the overcloud deployment.
 * ``--network-protocol``:
     The overcloud network backend.
 * ``--public-net-name``:

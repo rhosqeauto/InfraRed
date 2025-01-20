@@ -29,7 +29,7 @@ Non-RedHat Employees should file pull requests to the `InfraRed project`_ on Git
 Release Notes
 -------------
 Infrared uses `reno`_ tool for providing release notes.
-That means that a patch can include a reno file (release notes) containing detailed description what the impact is.
+That means that a patch can include a reno file (release notes) containing detailed description of what the impact is.
 
 A reno file is a YAML file written in the releasenotes/notes directory which is generated using the reno tool this way:
 

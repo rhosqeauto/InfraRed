@@ -22,7 +22,7 @@ Override playbooks
 ------------------
 
 In this example we'll use a custom playbook to override our cleanup play and replace it with the process described above.
-First, lets create an empty playbook called: ``noop.yml``::
+First, let's create an empty playbook called: ``noop.yml``::
 
     ---
     - name: Just another empty play
